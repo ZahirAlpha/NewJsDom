@@ -200,34 +200,85 @@
 
 // Create element 
 
-const li = document.createElement('li');
+// const li = document.createElement('li');
 
-// Add class
+// // Add class
 
-li.className = 'collection-item';
+// li.className = 'collection-item';
 
-// Add id
-li.id = 'new-item';
+// // Add id
+// li.id = 'new-item';
 
-// Add attribute
-li.setAttribute('title', 'New Item');
+// // Add attribute
+// li.setAttribute('title', 'New Item');
 
-// Create Text node
-li.appendChild(document.createTextNode('Hello world'));
+// // Create Text node
+// li.appendChild(document.createTextNode('Hello world'));
 
-// Create new link element
-const link = document.createElement('a')
-//Add classes
-link.className = 'delete-item secondary-content';
+// // Create new link element
+// const link = document.createElement('a')
+// //Add classes
+// link.className = 'delete-item secondary-content';
 
-// add icon html
-link.innerHTML = '<i class="fa fa-remove"></i>';
+// // add icon html
+// link.innerHTML = '<i class="fa fa-remove"></i>';
 
-// append link into li
-li.appendChild(link);
+// // append link into li
+// li.appendChild(link);
 
 
-// Append li as child to ul
-document.querySelector('ul.collection').appendChild(li);
+// // Append li as child to ul
+// document.querySelector('ul.collection').appendChild(li);
 
-console.log(li);
+// console.log(li);
+
+
+
+// ===== Removing and replacing elements ==== //
+// REPLACE ELEMENTS 
+const newHeading = document.createElement('h2');
+// Add ID
+newHeading.id = 'task-title';
+// New text node
+newHeading.appendChild(document.createTextNode('Task List'));
+// Get the old heading 
+const oldHeading = document.getElementById('task-title');
+// Parent
+const cardAction = document.querySelector('.card-action');
+// Replace
+cardAction.replaceChild(newHeading, oldHeading);
+
+// REMOVE ELEMENT
+
+const lis = document.querySelectorAll('li');
+const list = document.querySelector('ul');
+
+// REMOVE
+lis[0].remove();
+
+// REMOVE CHILD ELEMENT
+list.removeChild(lis[3]);
+
+// CLASSES & ATTR
+const firstLi = document.querySelector('li:first-child');
+const link = firstLi.children[0];
+
+let val;
+
+// Classes
+val = link.className;
+val = link.classList;
+val = link.classList[0];
+link.classList.add('test');
+link.classList.remove('test');
+val = link;
+
+// Attribute
+val = link.getAttribute('href');
+val = link.setAttribute('href', 'http//google.com');
+link.setAttribute('title', 'Google');
+val = link.hasAttribute('href');
+link.removeAttribute('title');
+val = link;
+
+console.log(val);
