@@ -292,36 +292,72 @@
 //   // e.preventDefault();
 // });
 
-document.querySelector('.clear-tasks').addEventListener('mouseover', onclick);
+// document.querySelector('.clear-tasks').addEventListener('mouseover', onclick);
 
-function onclick(e) {
-  // console.log('Clicked');
+// function onclick(e) {
+//   // console.log('Clicked');
 
-  let val;
+//   let val;
 
-  val = e;
+//   val = e;
 
-  // Event target elements
-  val = e.target;
-  val = e.target.id;
-  val = e.target.className;
-  val = e.target.classList;
+//   // Event target elements
+//   val = e.target;
+//   val = e.target.id;
+//   val = e.target.className;
+//   val = e.target.classList;
 
-  e.target.innerText = 'Hello';
+//   e.target.innerText = 'Hello';
 
-  // event type
-  val = e.type;
+//   // event type
+//   val = e.type;
 
-  //Timestamp
-  val = e.timeStamp;
+//   //Timestamp
+//   val = e.timeStamp;
 
-  // Coords event relative to the window
-  val = e.clientY;
-  val = e.clientX;
+//   // Coords event relative to the window
+//   val = e.clientY;
+//   val = e.clientX;
 
-  // Coords event relative to itself
-  val = e.offsetY;
-  val = e.offsetX;
+//   // Coords event relative to itself
+//   val = e.offsetY;
+//   val = e.offsetX;
 
-  console.log(val);
-}
+//   console.log(val);
+// }
+
+
+// ==== Mouse Events ===== //
+
+const clearBtn = document.querySelector('.clear-tasks');
+const card = document.querySelector('.card');
+const heading = document.querySelector('h5');
+
+// Click 
+// clearBtn.addEventListener('click', runEvent);
+// Double Click
+// clearBtn.addEventListener('dblclick', runEvent);
+//Mouse Down
+// clearBtn.addEventListener('mousedown', runEvent);
+//Mouse up
+// clearBtn.addEventListener('mouseup', runEvent);
+//Mouse Enter
+// card.addEventListener('mouseenter', runEvent);
+//Mouse Leave
+// card.addEventListener('mouseleave', runEvent);
+//Mouse over
+// card.addEventListener('mouseover', runEvent);
+//Mouse out
+// card.addEventListener('mouseout', runEvent);
+// Mouse move
+card.addEventListener('mousemove', runEvent);
+
+
+
+// Event Handler
+function runEvent(e) {
+  console.log(`EVENT TYPE: ${e.type}`);
+  heading.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
+
+  document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`;
+};
