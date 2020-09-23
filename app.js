@@ -329,9 +329,9 @@
 
 // ==== Mouse Events ===== //
 
-const clearBtn = document.querySelector('.clear-tasks');
-const card = document.querySelector('.card');
-const heading = document.querySelector('h5');
+// const clearBtn = document.querySelector('.clear-tasks');
+// const card = document.querySelector('.card');
+// const heading = document.querySelector('h5');
 
 // Click 
 // clearBtn.addEventListener('click', runEvent);
@@ -350,14 +350,67 @@ const heading = document.querySelector('h5');
 //Mouse out
 // card.addEventListener('mouseout', runEvent);
 // Mouse move
-card.addEventListener('mousemove', runEvent);
+// card.addEventListener('mousemove', runEvent);
 
 
 
 // Event Handler
+// function runEvent(e) {
+//   console.log(`EVENT TYPE: ${e.type}`);
+//   heading.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
+
+//   document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`;
+// };
+
+// Keyboard & Input events
+
+const form = document.querySelector('form');
+const taskInput = document.getElementById('task');
+const heading = document.querySelector('h5');
+const select = document.querySelector('select');
+
+// Clear input
+taskInput.value = '';
+
+// form.addEventListener('submit', runEvent);
+
+// Keydown
+// taskInput.addEventListener('keydown', runEvent);
+
+// Keyup
+// taskInput.addEventListener('keyup', runEvent);
+
+// Keypress
+// taskInput.addEventListener('keypress', runEvent);
+
+// focus 
+// taskInput.addEventListener('focus', runEvent);
+
+// Blur
+// taskInput.addEventListener('blur', runEvent);
+
+//cut
+// taskInput.addEventListener('cut', runEvent);
+
+//paste
+// taskInput.addEventListener('paste', runEvent);
+
+// Input Event 
+// taskInput.addEventListener('input', runEvent);
+
+// change
+select.addEventListener('change', runEvent);
+
+
 function runEvent(e) {
   console.log(`EVENT TYPE: ${e.type}`);
-  heading.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
 
-  document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`;
-};
+  console.log(e.target.value);
+
+  // heading.innerText = e.target.value;
+
+  // Get input value
+  // console.log(taskInput.value)
+
+  // e.preventDefault();
+}
